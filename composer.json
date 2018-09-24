@@ -2,7 +2,7 @@
     "name": "ournameismud/autobots",
     "description": "Simple variable plugin to declare image transforms in your config and access these within templates",
     "type": "craft-plugin",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "keywords": [
         "craft",
         "cms",

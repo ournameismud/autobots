@@ -24,21 +24,44 @@ To install the plugin, follow these instructions.
 
 ## Autobots Overview
 
--Insert text here-
+This provides a variable object for image transforms that can be saved in your config folder.
 
 ## Configuring Autobots
 
--Insert text here-
+
+Your image transforms are saved in your project config folder with the name `autobots.php` with arrays for your image transforms, eg:
+
+```
+<?php
+
+return [
+    'transforms' => [
+    	'thumbCrop' => [
+    		'mode'=>'crop',
+    		'width'=>'280',
+    		'height'=>'280',
+    		'position'=>'center-center',
+    	],
+    	'heroCrop' => [
+    		'mode'=>'crop',
+    		'width'=>'1489',
+    		'height'=>'650',
+    		'position'=>'center-center',
+    	]
+	]
+];
+```
 
 ## Using Autobots
 
--Insert text here-
+Your image transforms can be easily accessed in your templates, eg:
+
+`{% set transforms = craft.autobots.transforms %}` and then `{{ transforms.thumbCrop }}` to access.
+
 
 ## Autobots Roadmap
 
-Some things to do, and ideas for potential features:
-
-* Release it
+* Pass and retrieve specific transform into variable, eg `{% set heroCrop = craft.autobots.transforms('heroCrop') %}`
 
 Brought to you by [@cole007](http://ournameismud.co.uk/)
 Autobot by rayhan maulana rikzan from the Noun Project

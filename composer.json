@@ -1,0 +1,40 @@
+{
+    "name": "ournameismud/autobots",
+    "description": "Simple variable plugin to declare image transforms in your config and access these within templates",
+    "type": "craft-plugin",
+    "version": "0.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "autobots"
+    ],
+    "support": {
+        "docs": "https://github.com/ournameismud/autobots/blob/master/README.md",
+        "issues": "https://github.com/ournameismud/autobots/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "@cole007",
+            "homepage": "http://ournameismud.co.uk/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "ournameismud\\autobots\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Autobots",
+        "handle": "autobots",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/ournameismud/autobots/master/CHANGELOG.md",
+        "class": "ournameismud\\autobots\\Autobots"
+    }
+}

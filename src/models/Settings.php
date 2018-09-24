@@ -8,31 +8,38 @@
  * @copyright Copyright (c) 2018 @cole007
  */
 
-namespace ournameismud\autobots\variables;
+namespace ournameismud\autobots\models;
 
 use ournameismud\autobots\Autobots;
-// use ournameismud\autobots\models\Settings;
 
 use Craft;
+use craft\base\Model;
 
 /**
  * @author    @cole007
  * @package   Autobots
  * @since     0.0.1
  */
-class AutobotsVariable
+class Settings extends Model
 {
+    // Public Properties
+    // =========================================================================
+
+    /**
+     * @var string
+     */
+    public $transforms = '';
+
     // Public Methods
     // =========================================================================
 
     /**
-     * @param null $optional
-     * @return string
+     * @inheritdoc
      */
-    public function transforms($option = null)
+    public function rules()
     {
-        $settings = Autobots::$plugin->getSettings();
-        $transforms = $settings->transforms;
-        return $transforms;
+        return [
+            ['transforms', 'string'],
+        ];
     }
 }

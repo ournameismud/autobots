@@ -11,6 +11,7 @@
 namespace ournameismud\autobots;
 
 use ournameismud\autobots\variables\AutobotsVariable;
+use ournameismud\autobots\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -44,7 +45,7 @@ class Autobots extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '0.0.2';
+    public $schemaVersion = '0.0.3';
 
     // Public Methods
     // =========================================================================
@@ -89,4 +90,24 @@ class Autobots extends Plugin
     // Protected Methods
     // =========================================================================
 
+    /**
+     * @inheritdoc
+     */
+    protected function createSettingsModel()
+    {
+        return new Settings();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function settingsHtml(): string
+    {
+        return Craft::$app->view->renderTemplate(
+            'autobots/settings',
+            [
+                'settings' => $this->getSettings()
+            ]
+        );
+    }
 }
